@@ -34,30 +34,6 @@ def bos_bul(bo):
     return None
 
 
-def valid(bo, num, pos):
-    for i in range(9):
-        # yatay olarak kontrol
-        # print('burada')
-        # print(pos[0])
-        if bo[pos[0]][i] == num:
-            return False
-        # dikey kontrol
-        if bo[i][pos[1]] == num:
-            return False
-
-        # kareleri kontrol
-
-        kare_x = pos[1] // 3
-
-        kare_y = pos[0] // 3
-        for k in range(kare_y * 3, kare_y * 3 + 3):
-            for r in range(kare_x * 3, kare_x * 3 + 3):
-
-                if bo[k][r] == num and (k, r) != pos:
-                    return False
-
-    # print(bo)
-    return True
 
 
 def dogru_sayi(bo, numara, pos):
